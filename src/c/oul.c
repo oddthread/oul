@@ -111,8 +111,8 @@ char *get_ext(char *path){
 		for(j=i; path[j]; j++){
 			size++;
 		}
-		retval=malloc(size+1);
-		retval[size]=0;
+		retval=malloc(size);
+		retval[size-1]=0;
 		for(j=i,k=0; path[j]; j++,k++){
 			retval[k]=path[j];
 		}
