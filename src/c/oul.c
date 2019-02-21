@@ -105,17 +105,20 @@ char *get_ext(char *path){
 		}
 	}
 	char *retval;
-	int size;
+	int size=0;
 	int j,k;
 	if(i!=-1){
 		for(j=i; path[j]; j++){
 			size++;
 		}
+		size++;
+		printf("size: %d\n",size);
 		retval=malloc(size);
 		retval[size-1]=0;
 		for(j=i,k=0; path[j]; j++,k++){
 			retval[k]=path[j];
 		}
+		printf("ext: %s\n",retval);
 		return retval;
 	}
 	else{
