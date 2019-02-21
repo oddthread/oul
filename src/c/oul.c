@@ -92,6 +92,37 @@ char* itoa(int num, char* str, int base)
     return str;
 }
 
+char *get_ext(char *path){
+	int i=-1;
+	for(int n=0; path[n]; n++){
+		if(path[n]=='.'){
+			if(path[n+1]){
+				i=n+1;
+			}
+			else{
+				return NULL;/*if empty after the last dot, no ext*/
+			}
+		}
+	}
+	char *retval;
+	int size;
+	int j,k;
+	if(i!=-1){
+		for(j=i; path[j]; j++){
+			size++;
+		}
+		retval=malloc(size+1);
+		retval[size]=0;
+		for(j=i,k=0; path[j]; j++,k++){
+			retval[k]=path[j];
+		}
+		return retval;
+	}
+	else{
+		return NULL;
+	}
+}
+
 char *alloc_str_slice(char *c, s32 begin, s32 end)
 {
 	/*signed parameters because then if you index negatively you can get a negative value here and return emptystr*/

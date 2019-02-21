@@ -14,6 +14,7 @@ struct vec2 {
     r32 y;
 };
 
+char *get_ext(char *path);
 bool insec(vec2 pos_a,vec2 size_a,vec2 pos_b,vec2 size_b);
 vec2 vec2_sub(vec2 a,vec2 b);
 vec2 vec2_add(vec2 a,vec2 b);
@@ -34,6 +35,7 @@ char *alloc_str_slice(char *c,s32 begin,s32 end);
 char *itoa(int num,char *str,int base);
 void str_reverse(char *str);
 bool str_eq(char *a,char *b);
+bool str_contains(char *a, char b);
 u32 str_len(char *str);
 void zero_out(void *p,u32 size);
 
