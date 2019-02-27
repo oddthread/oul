@@ -118,7 +118,7 @@ char *get_ext(char *path){
 		for(j=i,k=0; path[j]; j++,k++){
 			retval[k]=path[j];
 		}
-		printf("ext: %s\n",retval);
+		
 		return retval;
 	}
 	else{
