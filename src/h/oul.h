@@ -61,6 +61,7 @@ struct vec3 {
     r32 z;
 };
 
+vec3 value_vec3(r32 x,r32 y,r32 z);
 #if !defined(false) && !defined(__cplusplus)
 #define false 0
 #endif

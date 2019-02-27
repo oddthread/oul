@@ -113,7 +113,7 @@ char *get_ext(char *path){
 		}
 		size++;
 		printf("size: %d\n",size);
-		retval=malloc(size);
+		retval=(char*)malloc(size);
 		retval[size-1]=0;
 		for(j=i,k=0; path[j]; j++,k++){
 			retval[k]=path[j];
@@ -131,7 +131,7 @@ char *alloc_str_slice(char *c, s32 begin, s32 end)
 	/*signed parameters because then if you index negatively you can get a negative value here and return emptystr*/
 	if(end-begin<0 || !c || !c[0])
 	{
-		char *emptystr=malloc(1);
+		char *emptystr=(char*)malloc(1);
 		emptystr[0]=0;
 		return emptystr; 
 	}
@@ -155,7 +155,7 @@ char *str_insert(char *str, char c, u32 position)
 {
 	u32 i;
 	u32 new_strlen=strlen(str)+1;
-	char *newstr=malloc(new_strlen+1);
+	char *newstr=(char*)malloc(new_strlen+1);
 	for(i=0; i<position; i++)
 	{
 		newstr[i]=str[i];
@@ -170,6 +170,13 @@ char *str_insert(char *str, char c, u32 position)
 	free(str);
 	return newstr;
 }
+vec3 value_vec3(r32 x,r32 y,r32 z){
+	vec3 v;
+	v.x=x;
+	v.y=y;
+	v.z=z;
+	return v;
+}
 /*doesnt free either parameter*/
 char *str_cat(char const *a, char const *b)
 {
@@ -178,7 +185,7 @@ char *str_cat(char const *a, char const *b)
 	u32 strlen_a=strlen(a);
 	u32 strlen_b=strlen(b);
 
-	char *newstring=malloc(strlen_a+strlen_b+1);
+	char *newstring=(char*)malloc(strlen_a+strlen_b+1);
 	for(; i<strlen_a; i++)
 	{	
 		newstring[i]=a[i];
