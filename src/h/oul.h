@@ -1,6 +1,7 @@
 /*This file was automatically generated.*/
 #ifndef d_oul_h
 #define d_oul_h
+#include <math.h>
 
 typedef unsigned char u8;
 #if !defined(bool) && !defined(__cplusplus)
