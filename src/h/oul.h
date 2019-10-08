@@ -60,26 +60,6 @@ struct vec3 {
     r32 x;
     r32 y;
     r32 z;
-    vec3 normalize(){
-        vec3 v;
-        r32 len=sqrt(pow(x,2)+pow(y,2)+pow(z,2));
-        v.x=x/len;
-        v.y=y/len;
-        v.z=z/len;
-        return v;
-    }
-    vec3 operator+(vec3 a){
-        return vec3{a.x+x,a.y+y,a.z+z};
-    }
-    vec3 operator-(vec3 a){
-        return vec3{x-a.x,y-a.y,z-a.z};
-    }
-    vec3 operator*(vec3 a){
-        return vec3{a.x*x,a.y*y,a.z*z};
-    }
-    vec3 operator*(r32 a){
-        return vec3{a*x,a*y,a*z};
-    }
 };
 
 vec3 value_vec3(r32 x,r32 y,r32 z);

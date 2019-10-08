@@ -1,12 +1,23 @@
 #include <math.h>
-#include "oul/src/h/oul.h"
-#include "opl/src/h/system.h"
+#include "../../../oul/src/h/oul.h"
+#include "../../../opl/src/h/system.h"
 #include <stdio.h>
 
 #ifdef __APPLE__
-#include <SDL2/SDL.h>
+    #include "TargetConditionals.h"
+    #if TARGET_OS_IOS
+	#include "SDL.h"
+	#include "SDL_image.h"
+    #include "SDL_ttf.h"
+    #else
+	#include <SDL2/SDL.h>
+	#include <SDL2/SDL_ttf.h>
+	#include <SDL2/SDL_image.h>
+    #endif
 #else
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #endif
 
 
